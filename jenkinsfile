@@ -8,7 +8,7 @@ node {
     }
 
     stage('Build image') {
-        /* This builds the actual image */
+        /* This builds the actual image in the local docker host*/
         app = docker.build("samplewebapi", ". -f SampleWebApi/Dockerfile") 
     }
 
