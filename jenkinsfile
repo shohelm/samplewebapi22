@@ -9,8 +9,7 @@ node {
 
     stage('Build image') {
         /* This builds the actual image */
-
-        app = docker.build("SampleWebApi/Dockerfile")
+        app = docker.build("samplewebapi", "./SampleWebApi/Dockerfile") 
     }
 
     stage('Test image') {
