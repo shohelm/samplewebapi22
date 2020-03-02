@@ -30,4 +30,8 @@ node {
             } 
                 echo "Trying to Push Docker Build to DockerHub"
     }
+    stage('Deploy in kubernetes')
+    {
+    	kubectl apply -f SampleWebApi/samplewebapi-deployment.yml 
+    }
 }
