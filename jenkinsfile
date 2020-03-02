@@ -1,4 +1,12 @@
 node {
+    stage("Env Variables") {
+            steps {
+                echo "The build number is ${env.BUILD_NUMBER}"
+                echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}"
+                sh 'echo "I can access $BUILD_NUMBER in shell command as well."'
+            }
+        }
+     
     def app
 
     stage('Clone repository') {
@@ -9,7 +17,7 @@ node {
 
     stage('Build image') {
         /* This builds the actual image in the local docker host*/
-        app = docker.build("samplewebapi", ". -f SampleWebApi/Dockerfile") 
+        app = docker.build("samplewebapi", ". -f SampleWebApi/Dockerfile") */
     }
 
     stage('Test image') {
@@ -19,6 +27,7 @@ node {
         }
     }
 
+/*
     stage('Push image') {
          
 			You would need to first register with DockerHub before you can push images to your account
@@ -28,5 +37,5 @@ node {
             app.push("latest")
             } 
                 echo "Trying to Push Docker Build to DockerHub"
-    }
-}
+    }*/
+} 
