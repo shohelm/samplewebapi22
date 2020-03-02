@@ -32,6 +32,9 @@ node {
     }
     stage('Deploy in kubernetes')
     {
-    	kubectl apply -f SampleWebApi/samplewebapi-deployment.yml 
+    	/*kubectl apply -f SampleWebApi/samplewebapi-deployment.yml */
+	bash '''#!/bin/bash
+                 echo "hello world" 
+         '''
     }
 }
