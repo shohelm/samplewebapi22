@@ -1,13 +1,6 @@
 node {
     def app
     
-    stage("Env Variables") {
-           
-              /*  echo "The build number is ${env.BUILD_NUMBER}"*/
-            
-           
-        }
-	
     stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
 
@@ -16,13 +9,14 @@ node {
 
     stage('Build image') {
         /* This builds the actual image in the local docker host*/
-        app = docker.build("samplewebapi", ". -f SampleWebApi/Dockerfile") */
+        app = docker.build("samplewebapi", ". -f SampleWebApi/Dockerfile")
     }
 
     stage('Test image') {
         
         app.inside {
             echo "Tests passed"
+	    echo "The build number is ${env.BUILD_NUMBER}"
         }
     }
 
