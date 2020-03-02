@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
         /* This builds the actual image in the local docker host*/
-        app = docker.build("samplewebapi", ". -f SampleWebApi/Dockerfile")
+        /*app = docker.build("samplewebapi", ". -f SampleWebApi/Dockerfile")*/
     }
 
     stage('Test image') {
@@ -20,14 +20,14 @@ node {
         }
     }
 
-    /*stage('Push image') {
+    stage('Push image') {
          
-			You would need to first register with DockerHub before you can push images to your account
+	/*You would need to first register with DockerHub before you can push images to your account*/
 		
         docker.withRegistry('tcp://dockerregistry.local.com:8080') {
-           app.push("${env.BUILD_NUMBER}") 
+            app.push("${env.BUILD_NUMBER}") 
             app.push("latest")
             } 
                 echo "Trying to Push Docker Build to DockerHub"
-    }*/
+    }
 }
