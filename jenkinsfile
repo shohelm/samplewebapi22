@@ -1,5 +1,5 @@
 node {
-    agent any
+    def app
     stage("Env Variables") {
            
                 echo "The build number is ${env.BUILD_NUMBER}"
@@ -7,7 +7,7 @@ node {
            
         }
      
-    def app
+    
 
     stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
