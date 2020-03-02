@@ -34,7 +34,9 @@ node {
     {
     	/*kubectl apply -f SampleWebApi/samplewebapi-deployment.yml */
 	 
-                bat 'echo "hello world"' 
+              bash '''#!/bin/bash
+                 echo "hello world" 
+         '''
           
     }
 }
