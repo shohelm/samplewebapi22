@@ -18,7 +18,7 @@ spec:
       containers:
       - name: mysamplewebapi
         image: dockerregistry.local.com:5000/samplewebapi:v1
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
         resources:
