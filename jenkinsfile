@@ -33,10 +33,6 @@ node {
     stage('Deploy in kubernetes')
     {
     	/*kubectl apply -f SampleWebApi/samplewebapi-deployment.yml */
-	 
-              bash '''#!/bin/bash
-                 echo "hello world" 
-         '''
-          
+	 kubernetesDeploy(configs: "SampleWebApi/samplewebapi-deployment.yml", kubeconfigId: "mykubeconfig") 
     }
 }
