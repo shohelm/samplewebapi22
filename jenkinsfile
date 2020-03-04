@@ -1,5 +1,4 @@
 node {
-    agent any
     def app
     
     stage('Clone repository') {
@@ -35,7 +34,7 @@ node {
     {
     	/*kubectl apply -f SampleWebApi/samplewebapi-deployment.yml */
 	 /*kubernetesDeploy(configs: "SampleWebApi/samplewebapi-deployment.yml", kubeconfigId: "mykubeconfig") */
-	 withKubeConfig([credentialsId: 'minikube', serverUrl: ' https://192.168.137.158:8443']) {
-         sh 'kubectl apply -f SampleWebApi/samplewebapi-deployment.yml'}
+	 withKubeConfig([credentialsId: 'minikube', serverUrl: ' https://192.168.137.158:8443'])
+         sh 'kubectl apply -f SampleWebApi/samplewebapi-deployment.yml'
     }
 }
