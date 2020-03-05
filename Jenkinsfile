@@ -33,10 +33,6 @@ node {
     stage('Deploy in kubernetes')
     {
     	/*kubectl apply -f SampleWebApi/samplewebapi-deployment.yml */
-	 kubernetesDeploy(configs: "SampleWebApi/samplewebapi-deployment.yml", kubeconfigId: "mykubeconfig") 
-        
-	  /*withKubeConfig([serverUrl: 'https://192.168.137.158:8443']) {
-          /*sh 'kubectl apply -f SampleWebApi/samplewebapi-deployment.yml'*/
-     }*/
+	 kubernetesDeploy(configs: "SampleWebApi/samplewebapi-deployment.yml", kubeconfigId: "mykubeconfig")    
     }
 }
