@@ -26,16 +26,3 @@ spec:
           #limits:
             #memory: "128Mi" #"128Mi"
             #cpu: "200m" #200 millicpu (.2 cpu or 20% of the cpu)
---- 
-apiVersion: v1
-kind: Service
-metadata:
-  name: mysamplewebapi-nodeport
-spec:
-  type: NodePort    #use for loadbalancing
-  selector:
-      app: mysamplewebapi
-  ports:
-    - port: 80
-      targetPort: 80
-      nodePort: 31000           
