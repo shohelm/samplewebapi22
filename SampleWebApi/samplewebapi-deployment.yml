@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: mysamplewebapi
-        image: dockerregistry.local.com:5000/samplewebapi:v1
+        image: 10.16.131.56:5000/samplewebapi:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 80
