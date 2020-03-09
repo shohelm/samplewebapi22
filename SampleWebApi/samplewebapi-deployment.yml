@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: mysamplewebapi
-        image: 192.168.137.150/samplewebapi:latest
+        image: 10.16.131.26:5000/samplewebapi:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
